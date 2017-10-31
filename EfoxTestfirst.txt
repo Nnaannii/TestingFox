@@ -1,3 +1,7 @@
 Primer Linea
 
+<<<<<<< HEAD
 Primer Update
+=======
+3 Change
+>>>>>>> FirstUpdate
