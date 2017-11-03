@@ -1,0 +1,30 @@
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+
+ALTER    FUNCTION dbo.fn_isHUNo
+(
+@HUNo varchar(50)
+)
+RETURNS BIT
+BEGIN
+	DECLARE @_return BIT
+	IF EXISTS(SELECT 0 from mfhulabelstatus (NOLOCK) WHERE HU_Id=@HUNo) 
+		SET @_return='1'
+	ELSE
+		SET @_return='0'
+RETURN @_return
+END
+
+
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
